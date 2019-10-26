@@ -1,10 +1,18 @@
 #!/usr/bin/Rscript
 
-args <- commandArgs(T)
+#Description: This script runs in a bash terminal. you must supply three positonal arguments
+#             1. 4D Nifti Dataset
+#             2. Binary Roi mask
+#              3. Desired ouput file name
 
+
+### commands that will make possible interaction between bash and R
+args <- commandArgs(T)
 dataset <- as.character(args[1])
 roi <- as.character(args[2])
 output <- as.character(args[3])
+
+### load packages
 library(magrittr)
 library(oro.nifti)
 library(neurobase)
