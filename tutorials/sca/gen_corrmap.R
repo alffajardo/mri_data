@@ -30,7 +30,7 @@ func_mask[func_mask !=0] <- 1
 ### time series
 ts <- matrix(func[roi!=0],ncol = d[4]) %>%
       colMeans()
-## linearize non zero voxelsand compute correlation coeficients in every row
+## linearize non zero voxels and compute correlation coeficients in every row
 rvalues <- matrix(func[func_mask !=0],ncol=d[4]) %>%
           apply(.,1,cor,ts)
           
