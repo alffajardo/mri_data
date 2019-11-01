@@ -27,10 +27,10 @@ func_mask <- niftiarr(img= roi, arr = 0)
 func_mask@.Data <- func[,,,1]
 func_mask[func_mask !=0] <- 1
 
-### time series
+### Extract ROI time series
 ts <- matrix(func[roi!=0],ncol = d[4]) %>%
       colMeans()
-## linearize non zero voxels and compute correlation coeficients in every row
+## linearize non zero voxels of 4D dataset  and compute correlation coeficients with ROI time series  in every row of the matrix
 rvalues <- matrix(func[func_mask !=0],ncol=d[4]) %>%
           apply(.,1,cor,ts)
           
